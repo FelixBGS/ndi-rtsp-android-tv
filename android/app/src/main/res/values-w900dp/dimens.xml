@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 1080p TV is 960dp wide: keeps the form ~640dp in the middle. -->
+    <dimen name="settings_side_padding">160dp</dimen>
+</resources>

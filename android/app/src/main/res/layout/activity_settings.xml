@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/settings_side_padding"
+        android:paddingTop="40dp"
+        android:paddingRight="@dimen/settings_side_padding"
+        android:paddingBottom="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_title"
+            android:textColor="@color/text"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/settings_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/SettingsLabel"
+            android:text="@string/settings_url" />
+
+        <EditText
+            android:id="@+id/url_input"
+            style="@style/SettingsInput"
+            android:hint="@string/settings_url_hint"
+            android:imeOptions="actionNext"
+            android:inputType="textUri|textNoSuggestions" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/settings_url_help"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/SettingsLabel"
+            android:text="@string/settings_latency" />
+
+        <EditText
+            android:id="@+id/latency_input"
+            style="@style/SettingsInput"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/settings_latency_hint"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/autostart"
+            style="@style/SettingsCheck"
+            android:text="@string/settings_autostart" />
+
+        <CheckBox
+            android:id="@+id/muted"
+            style="@style/SettingsCheck"
+            android:text="@string/settings_muted" />
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/error"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/save"
+                style="@style/SettingsButton.Primary"
+                android:text="@string/settings_save" />
+
+            <Button
+                android:id="@+id/cancel"
+                style="@style/SettingsButton"
+                android:layout_marginLeft="16dp"
+                android:text="@string/settings_cancel" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/overlay_permission"
+            style="@style/SettingsButton"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_weight="0"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:text="@string/settings_overlay"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/settings_remote_help"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RTSP TV Player</string>
+
+    <string name="status_connecting">Подключение к потоку…\n%1$s</string>
+    <string name="status_retry">%1$s\nПовтор через %2$.0f с</string>
+    <string name="status_no_source">Источник не выбран\nНажмите OK, чтобы найти трансляции в сети</string>
+    <string name="status_stalled">Поток завис</string>
+    <string name="status_ended">Трансляция остановлена</string>
+    <string name="status_bad_url">Неверный адрес потока: %1$s\nНажмите OK, чтобы открыть настройки</string>
+
+    <string name="error_network">Сервер недоступен</string>
+    <string name="error_not_found">Сервер работает, но трансляция не запущена</string>
+    <string name="error_decoder">Приставка не может декодировать этот поток (проверьте разрешение и кодек)</string>
+    <string name="error_generic">Ошибка воспроизведения (%1$s)</string>
+
+    <string name="stats_template">%1$s\n%2$s\n%3$dx%4$d  %5$.1f fps  %6$s\nбитрейт: %7$s   RTT: %8$s\nбуфер: %9$d мс (цель %10$d, откл. %11$+d)  скорость: %12$.2fx\nпропущено кадров: %13$d   переподключений: %14$d  %15$s</string>
+    <string name="stats_mbps">%.1f Мбит/с</string>
+    <string name="stats_ms">%d мс</string>
+    <string name="stats_no_rtt">нет ответа</string>
+    <string name="stats_manual_source">адрес введён вручную</string>
+    <string name="stats_muted">звук выкл.</string>
+
+    <string name="sources_title">Источники в сети</string>
+    <string name="sources_searching">Поиск трансляций в локальной сети…</string>
+    <string name="sources_none">Трансляции не найдены. Список обновляется каждые 5 секунд.</string>
+    <plurals name="sources_found">
+        <item quantity="one">Найдена %d трансляция</item>
+        <item quantity="few">Найдено %d трансляции</item>
+        <item quantity="many">Найдено %d трансляций</item>
+        <item quantity="other">Найдено %d трансляций</item>
+    </plurals>
+    <string name="sources_refresh">Обновить</string>
+    <string name="sources_manual">Ввести адрес вручную</string>
+    <string name="sources_diag">Диагностика сети</string>
+    <string name="sources_help">Если список пуст, откройте «Диагностика сети» и введите IP адаптера Wi-Fi или Ethernet на ПК. На ПК должны быть запущены MediaMTX и discovery.py, а в фаерволе открыты UDP 8555 и TCP 8554.</string>
+    <string name="source_title">%1$s — %2$s</string>
+    <string name="source_live">в эфире</string>
+    <string name="source_offline">не в эфире</string>
+    <string name="source_unknown">состояние неизвестно</string>
+    <string name="source_readers">зрителей: %d</string>
+    <string name="source_rtt">%d мс</string>
+    <string name="source_current">выбран</string>
+
+    <string name="settings_title">Настройки плеера</string>
+    <string name="settings_subtitle">Приставка воспроизводит один RTSP-поток в полноэкранном режиме и сама переподключается при обрывах.</string>
+    <string name="settings_url">Адрес потока или IP</string>
+    <string name="settings_url_hint">192.168.0.102</string>
+    <string name="settings_url_help">Достаточно IP компьютера: приложение само добавит :8554/live.</string>
+    <string name="settings_latency">Целевая задержка буфера, мс</string>
+    <string name="settings_latency_hint">300–500 мс для проводной сети, 800–1500 мс для Wi-Fi. Меньше значение — меньше задержка, но больше риск подтормаживаний.</string>
+    <string name="settings_autostart">Запускать при включении приставки</string>
+    <string name="settings_muted">Без звука</string>
+    <string name="settings_save">Сохранить</string>
+    <string name="settings_cancel">Отмена</string>
+    <string name="settings_overlay">Разрешить автозапуск (поверх других окон)</string>
+    <string name="settings_overlay_adb">На этой приставке нет экрана для разрешения. Выполните:\nadb shell appops set %1$s SYSTEM_ALERT_WINDOW allow</string>
+    <string name="settings_error_url">Введите IP компьютера или полный адрес rtsp://. Порт :8554 и путь /live добавятся сами.</string>
+    <string name="settings_error_latency">Задержка должна быть от %1$d до %2$d мс</string>
+    <string name="settings_remote_help">Пульт во время просмотра: OK — список источников, Меню — настройки, Вверх — статистика, Вниз — звук вкл/выкл. На телефоне: касание — список источников, долгое нажатие — статистика.\n\nЧтобы телевизоры показывали картинку синхронно, задайте на всех одинаковую задержку буфера.</string>
+    <string name="settings_version">Версия %1$s</string>
+
+    <string name="diag_title">Диагностика сети</string>
+    <string name="diag_subtitle">Введите IP адаптера Wi-Fi или Ethernet на ПК. Адреса vEthernet, VPN и VirtualBox не подойдут.</string>
+    <string name="diag_host">IP компьютера</string>
+    <string name="diag_host_hint">192.168.0.102</string>
+    <string name="diag_run">Проверить</string>
+    <string name="diag_working">Проверка…</string>
+    <string name="diag_bad_host">Не удалось разобрать адрес. Введите IP, например 192.168.0.102</string>
+    <string name="diag_target">Адрес ПК: %1$s</string>
+    <string name="diag_stream">Поток: rtsp://%1$s:%2$d/%3$s</string>
+    <string name="diag_phone">Телефон: %1$s/%2$d (%3$s)</string>
+    <string name="diag_no_ipv4">У телефона нет IPv4 в локальной сети. Подключите его к той же Wi-Fi, что и ПК.</string>
+    <string name="diag_subnet_ok">Подсеть: совпадает</string>
+    <string name="diag_subnet_bad">В другой подсети\nНужен IP адаптера Wi-Fi или Ethernet, не VPN и не VirtualBox.</string>
+    <string name="diag_subnet_skip">Подсеть: адрес не IPv4, сравнение пропущено</string>
+    <string name="diag_udp_ok">UDP 8555: discovery.py ответил, %1$d мс</string>
+    <string name="diag_udp_fail">UDP 8555 не отвечает</string>
+    <string name="diag_source_line">  %1$s — %2$s</string>
+    <string name="diag_other_host">Автопоиск видит другой адрес: %1$s</string>
+    <string name="diag_tcp_open">TCP %1$d: порт открыт</string>
+    <string name="diag_tcp_fail">Порт TCP %1$d не отвечает\n%2$s</string>
+    <string name="diag_rtsp_ok">MediaMTX отдаёт /%1$s\n%2$s</string>
+    <string name="diag_rtsp_404">Трансляция не запущена\n%1$s</string>
+    <string name="diag_rtsp_400">Неверный путь\n%1$s</string>
+    <string name="diag_rtsp_other">RTSP: %1$s</string>
+    <string name="diag_rtsp_silent">Порт открыт, ответа RTSP нет</string>
+</resources>

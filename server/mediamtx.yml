@@ -1,0 +1,46 @@
+# MediaMTX config for the NDI -> RTSP -> Android TV setup.
+# Run: mediamtx server/mediamtx.yml
+#
+# Publishers (OBS / GStreamer / ffmpeg) push ONE encoded stream to path "live";
+# every TV pulls it via rtsp://<server-ip>:8554/live without re-encoding.
+
+logLevel: info
+
+# Fail fast on dead clients so a TV that was switched off frees its slot quickly.
+readTimeout: 10s
+writeTimeout: 10s
+# Larger queue tolerates short Wi-Fi hiccups of individual TVs without
+# affecting the others (each reader has its own queue).
+writeQueueSize: 1024
+
+rtsp: yes
+rtspAddress: :8554
+# Clients choose; the Android app forces TCP, which is more reliable on Wi-Fi.
+rtspTransports: [tcp, udp]
+
+# OBS publishes via RTMP natively: rtmp://<server-ip>:1935/live
+rtmp: yes
+rtmpAddress: :1935
+
+# SRT ingest is handy when the encoder sits on another machine / network.
+srt: yes
+srtAddress: :8890
+
+# Not needed for this setup; enable if you want to watch the stream in a browser.
+hls: no
+webrtc: no
+moq: no
+
+api: yes
+apiAddress: 127.0.0.1:9997
+
+paths:
+  live:
+    source: publisher
+    # A restarted encoder may take over the path without waiting for a timeout.
+    overridePublisher: yes
+  # Any other name (rtsp://<server>:8554/hall2, rtmp://<server>:1935/cam2, ...) becomes
+  # one more source in the TV's source list.
+  all_others:
+    source: publisher
+    overridePublisher: yes

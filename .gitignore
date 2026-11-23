@@ -1,0 +1,13 @@
+# MediaMTX auto-generated certificates
+auto.key
+auto.crt
+
+# Android / Gradle
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+.cxx/
+captures/
